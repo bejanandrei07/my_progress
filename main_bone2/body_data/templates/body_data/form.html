@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Add Measurement{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4">Add New Measurement</h2>
+
+  <form method="post" class="needs-validation" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+<button type="submit" class="btn btn-primary mt-3" >
+  Save
+</button>
+  </form>
+</div>
+{% endblock %}
+

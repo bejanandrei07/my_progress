@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Progress{% endblock %}
+
+{% block content %}
+
+  <h2 class="text-center mb-4">Progress Tracker</h2>
+<table  class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+    <tr>
+        <th>Date</th>
+        <th>Weight</th>
+        <th>Biceps</th>
+        <th>Triceps</th>
+        <th>waist</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for entry in entries%}
+    <tr>
+        <td>{{entry.date_add}}</td>
+                <td>{{entry.weight}}</td>
+                <td>{{entry.biceps}}</td>
+                <td>{{entry.triceps}}</td>
+                <td>{{entry.waist}}</td>
+
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

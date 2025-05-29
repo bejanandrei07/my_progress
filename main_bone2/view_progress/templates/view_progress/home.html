@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+  <div class="text-center mt-5">
+    <h1>Welcome to Your Fitness Tracker</h1>
+    <p class="lead">Track your progress and stay motivated!</p>
+
+    <a href="{% url 'body_data:add_mesure' %}" class="btn btn-primary m-2">Add New Measurement</a>
+    <a href="{% url 'view_progress:progresslist' %}" class="btn btn-success m-2">View Progress</a>
+  </div>
+
+
+{% endblock %}
